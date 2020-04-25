@@ -1,4 +1,24 @@
-<form method="post">{% csrf_token %}
-    <p>Are you sure you want to delete?</p>
-    <input type="submit" value="Confirm">
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title>Delete</title>
+ <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">  <!--The <link> element creates a link between your HTML document and an external resource-->
+	<link rel="stylesheet" type="text/css" href="main.css">
+	</head>
+	<body>
+	<header class="page-header header container-fluid">
+		<div class="overlay"></div>
+		<div class="description">
+			<h2 style="color:red">Are you sure you want to delete?</h2>
+			<button class="btn btn-outline-secondary btn-lg">Confirm</button>
+			<button class="btn btn-outline-secondary btn-lg">No</button>
+		</div>
+	</header>
+	
+<script src="jquery-3.3.1.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,34 +1,42 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title>Pending Transaction</title>
+ <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">  <!--The <link> element creates a link between your HTML document and an external resource-->
+	<link rel="stylesheet" type="text/css" href="mainpend.css">
+	</head>
+	
+<body>
+<header class="page-header header container-fluid">
+<div class="overlay"></div>
 
-
-{% block body %}
-
-{% for item in Items %}
-        <div>
+        <div class="description">  
             <div>
-                <h3>{{ item.ProductModel }}</h3>
+                <h3 style="color:yellow">Pending Transaction of the shown item</h3>
             </div>
             <div>
                 <!-- Add Link to Details Here -->
                 <a href="{% url 'itemDetail' item.slug item.id %}">
-                    <img src="{{ item.ProductImage.url }}">
+                    <img src="images/item1.jpg" width="200">
                 </a>
                 <div>
-                    <h3>
-                        Price: {{ item.ProductPrice }}
+                    <h3 style="color:blue">
+                        Click to choose action
                     </h3>
                     <h4>
-                        {% if item.CurrentStatus == 4  %}
-                            Item for Sale
-                        {% elif item.CurrentStatus == 5 %}
-                            Item for Rent
-                        {% endif %}
+                        
                     </h4>
-                <a href="{% url 'Dashboard:approveItem' item.slug item.id %}"> Approve Transaction </a>
+                <button href="{% url 'Dashboard:approveItem' item.slug item.id %}"> Approve Transaction </button>
+				<button href="{% url 'Dashboard:approveItem' item.slug item.id %}"> Ask me later </button>
                 </div>
             </div>
         </div>
-{% endfor %}
 
-{% endblock %}
-
+</header>
+<script src="jquery-3.3.1.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
